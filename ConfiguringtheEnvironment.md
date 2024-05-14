@@ -49,7 +49,7 @@ async function OpenURL() {
 ```
 Observe abaixo o teste que fiz:
 
-![Captura de tela 2024-05-09 124401](https://github.com/cleibsonsilva94/Test.js/assets/156372072/e34e4964-f719-430c-9f62-820fb29753a4)
+https://github.com/cleibsonsilva94/Test.js/assets/156372072/4954b584-4253-4687-8abd-7653fc46108e
 
 E pronto, a magia acontece! A partir daí, você consegue criar automações diversas usando o Selenium WebDriver.
 
