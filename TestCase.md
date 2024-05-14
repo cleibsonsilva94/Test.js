@@ -45,7 +45,9 @@
 
 ### Casos de Teste - O que o cliente não pode fazer:
 
-1. Levando em conta as restrições, testar os seguintes cenários:
+Levando em conta as restrições, testar os seguintes cenários:
+
+1. **Antes ou depois do horaio permitido:**
    - Transferência de 2.000 às 7:59 e outra de 20:01 para um receptor não cadastrado.
    - Transferência nos mesmos horários, mas dessa vez para um destinatário cadastrado e com o valor de 5.000.
 
@@ -54,6 +56,8 @@
    - Transferência no valor de 5.001 reais para um cliente cadastrado.
 
 ### Testes na Gherkin Language:
+
+1. **Antes ou depois do horaio permitido:**
 
 ### Scenario: Transferência antes do horário permitido para destinatário não cadastrado.
   * Given que o usuário está logado no sistema do banco devidamente autenticado e são 7:59
@@ -86,6 +90,8 @@
   * And digita o valor de 5000 reais
   * And confirma com sua senha
   * Then o sistema exibe uma mensagem de que a transferência não foi possível.
+
+2. **Limite do Valor da Transferência:**
 
 ### Scenario: Transferência dentro do horário permitido mas com valor acima do permitido para destinatário cadastrado.
   * Given que o usuário está logado no sistema do banco devidamente autenticado e são 8:00
