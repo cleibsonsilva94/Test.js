@@ -43,6 +43,9 @@
   * Then o sistema exibe uma mensagem de que a transferência foi realizada com sucesso.
 
 
+
+
+
 ### Casos de Teste - O que o cliente não pode fazer:
 
 Levando em conta as restrições, testar os seguintes cenários:
