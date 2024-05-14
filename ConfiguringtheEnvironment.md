@@ -29,7 +29,7 @@
 
 - Arrastando o ChromeDriver:
 
-![Captura de tela 2024-05-09 124401](https://github.com/cleibsonsilva94/Test.js/assets/156372072/9426a441-cd73-4bb7-9fad-3b27c281d7a9)
+https://github.com/cleibsonsilva94/Test.js/assets/156372072/7eeaca30-f5b6-40f9-bcb6-6238d0aed62b
 
 2. **Passo 2:** Instale o Selenium via terminal usando o comando: `pip install selenium`.
 
