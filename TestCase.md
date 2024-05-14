@@ -46,7 +46,8 @@
 ---
 
 
-### Casos de Teste - O que o cliente não pode fazer:
+<font color="blue">### Casos de Teste - O que o cliente não pode fazer:</font>
+
 
 Levando em conta as restrições, testar os seguintes cenários:
 
