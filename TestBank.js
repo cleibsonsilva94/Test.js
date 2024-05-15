@@ -1,7 +1,6 @@
 // Importe as bibliotecas necessárias para simular o teste
 const { Builder, By, until } = require('selenium-webdriver');
 
-// Defina a função que simula o caso de teste
 async function TransferenciaValorDoAcimaLimite() {
   // Configuração do WebDriver (neste caso, Chrome)
   const driver = await new Builder().forBrowser('chrome').build();
@@ -10,12 +9,12 @@ async function TransferenciaValorDoAcimaLimite() {
     // Navega até a URL do banco
     await driver.get('URL_DO_BANCO');
 
-    // Simula o login
+    // Login
     await driver.findElement(By.id('id_do_campo_usuario')).sendKeys('usuario');
     await driver.findElement(By.id('id_do_campo_senha')).sendKeys('senha');
     await driver.findElement(By.id('id_do_botao_login')).click();
     
-    // Obtém o saldo da conta do cliente antes da transferência
+    // Saldo da conta do cliente antes da transferência
     const saldoAntes = await driver.findElement(By.id('id_do_campo_saldo')).getText();
 
     // tentando fazer uma transferência 
