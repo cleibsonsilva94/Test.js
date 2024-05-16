@@ -6,3 +6,5 @@ a[@href='https://example.com']: // Localiza um link (<a>) com o atributo href ig
 *[contains(text(), 'Enviar')]: // Localiza qualquer elemento que contenha o texto 'Enviar'. 
 // O asterisco (*) representa qualquer tag HTML. O método contains(text(), 'Enviar') verifica se o texto 'Enviar' está contido em qualquer parte do conteúdo do elemento.
 elemento[contains(@class, 'Parte do produto')] //Lembrar de colocar o // no inicio. 
+(//a[@class="menuAcessoRapido__btn--collapse arrow__icon"]//*[contains(@src, 'svg')])[2]
+ // forma de pegar especificamente um elemento. Isolando pelo numero no final.Isolar no começo. 
