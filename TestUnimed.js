@@ -63,7 +63,7 @@ async function example() {
     await driver.findElement(By.xpath(XPATH_CONFIRMAR)).click();
     await driver.sleep(5000);
 
-    const elementoMensagemSucesso = await driver.wait(until.elementLocated(By.xpath(XPATH_MENSAGEM_SUCESSO)), 10000);
+    const elementoMensagemSucesso = await driver.wait(until.elementLocated(By.xpath(XPATH_MENSAGEM_SUCESSO)), 10000); // Guardando a mensagem de sucesso para veriicação no if
     // Verificação final por meio do IF 
     if (elementoMensagemSucesso) {
       const textoMensagemSucesso = await elementoMensagemSucesso.getText();
