@@ -40,13 +40,29 @@ async function example() {
     await driver.wait(until.elementLocated(By.xpath("//div[contains(text(),'Abreu e Lima')]")), 10000);
     await driver.findElement(By.xpath("//div[contains(text(),'Abreu e Lima')]")).click();
     await driver.sleep(2000);
-    await driver.findElement(By.xpath("(//div[@class='Select-value'])")).click();
-    await driver.sleep(2000);
-    await driver.wait(until.elementLocated(By.xpath("(//div[@class='Select-value'])//*[contains(text(),'0 a 18')]")), 10000);
-    await driver.findElement(By.xpath("(//div[@class='Select-value'])//*[contains(text(),'0 a 18')]")).click(); 
-    await driver.sleep(2000);
+    await driver.wait(until.elementLocated(By.xpath("//div[@class='col-12 col-sm-6 text-center']//*[contains(text(),'Não')]")), 10000);
+    await driver.findElement(By.xpath("//div[@class='col-12 col-sm-6 text-center']//*[contains(text(),'Não')]")).click();
+    await driver.sleep(5000);
+    await driver.findElement(By.xpath("//a[@id='solicita_plano_pf']")).click();
+    await driver.wait(until.elementLocated(By.xpath("(//button[@type='button'])[3]")), 10000);
+    await driver.findElement(By.xpath("(//button[@type='button'])[3]")).click();
+    await driver.sleep(5000);
+    const elementoMensagemSucesso = await driver.wait(until.elementLocated(By.xpath("//div//*[contains(text(), 'Sua solicitação foi enviada com sucesso e uma cópia será encaminhada para o seu e-mail!')]")), 10000);
 
-    
+    // Verificação final. 
+    if (elementoMensagemSucesso) {
+      const textoMensagemSucesso = await elementoMensagemSucesso.getText();
+      const mensagemEsperada = 'Sua solicitação foi enviada com sucesso e uma cópia será encaminhada para o seu e-mail!';
+
+      if (textoMensagemSucesso === mensagemEsperada) {
+        console.log('A mensagem de sucesso esperada foi encontrada na página:', textoMensagemSucesso);
+      } else {
+        console.log('AVISO: A mensagem de sucesso encontrada na página não corresponde à mensagem esperada:', textoMensagemSucesso);
+      }
+    } else {
+      console.log('AVISO: A mensagem de sucesso esperada não foi encontrada na página.');
+    }
+
   } finally {
     await driver.quit();
   }
