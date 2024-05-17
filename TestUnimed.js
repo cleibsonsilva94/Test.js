@@ -1,4 +1,4 @@
-const { Builder, By, until } = require('selenium-webdriver'); //Instanciando bibliotecas do selenium-webdriver
+const { Builder, By, until } = require('selenium-webdriver');
 
 // Funções alxiliadoras. 
 async function fillFormField(driver, xpath, value) {
