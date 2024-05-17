@@ -4,7 +4,7 @@ const { Builder, By, until } = require('selenium-webdriver');
 async function fillFormField(driver, xpath, value) {
   const element = await driver.findElement(By.xpath(xpath));
   await element.click();
-  await driver.sleep(2000); // Ainda que o sleep seja usado aqui, é melhor evitar quando possível
+  await driver.sleep(2000); 
   await element.sendKeys(value);
 }
 
