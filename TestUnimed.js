@@ -40,10 +40,10 @@ async function example() {
     await driver.wait(until.elementLocated(By.xpath("//div[contains(text(),'Abreu e Lima')]")), 10000);
     await driver.findElement(By.xpath("//div[contains(text(),'Abreu e Lima')]")).click();
     await driver.sleep(2000);
-    await driver.findElement(By.xpath("(//div[@class='Select-value'])[3]")).click();
+    await driver.findElement(By.xpath("(//div[@class='Select-value'])")).click();
     await driver.sleep(2000);
-    await driver.wait(until.elementLocated(By.xpath("(//div[@class='Select-value'])[3]//*[contains(text(),'0 a 18')]")), 10000);
-    await driver.findElement(By.xpath("(//div[@class='Select-value'])[3]//*[contains(text(),'0 a 18')]")).click(); 
+    await driver.wait(until.elementLocated(By.xpath("(//div[@class='Select-value'])//*[contains(text(),'0 a 18')]")), 10000);
+    await driver.findElement(By.xpath("(//div[@class='Select-value'])//*[contains(text(),'0 a 18')]")).click(); 
     await driver.sleep(2000);
 
     
