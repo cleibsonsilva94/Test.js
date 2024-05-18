@@ -50,8 +50,8 @@ async function example() {
     const produtoNoCarrinhoElement = await driver.findElement(By.xpath(XPATH_PRODUCT_NAME_IN_CART));
     const produtoNoCarrinhoTexto = await produtoNoCarrinhoElement.getText();
     const valorProdutoElement = await driver.findElement(By.xpath(XPATH_PRODUCT_PRICE_IN_CART));
-    const valorProdutoNaPag = await valorProdutoElement.getText();
-    const valorProdutoNaPag = parseFloat(valorProdutoNaPag.replace(/[^\d.,]/g, '').replace(',', '.'));
+    const valorProdutoNaPagText = await valorProdutoElement.getText();
+    const valorProdutoNaPag = parseFloat(valorProdutoNaPagText.replace(/[^\d.,]/g, '').replace(',', '.'));
 
     // Retornando à página inicial
     await clickElement(driver, XPATH_LOGO, 5000);
