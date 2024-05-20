@@ -47,10 +47,10 @@ async function example() {
     await driver.findElement(By.xpath(XPATH_PESSOA_FISICA)).click();
     await driver.sleep(5000);
 
-    await fillFormField(driver, XPATH_CPF, '702.141.454-41');
-    await fillFormField(driver, XPATH_NOME, 'Cleibson Silva');
-    await fillFormField(driver, XPATH_EMAIL, 'Test01@gmail.com');
-    await fillFormField(driver, XPATH_TELEFONE, '8199318-7771');
+    await fillFormField(driver, XPATH_CPF, '012.361.971-86');
+    await fillFormField(driver, XPATH_NOME, 'Testador da Silva Teste');
+    await fillFormField(driver, XPATH_EMAIL, 'testadordasilvateste@gmail.com');
+    await fillFormField(driver, XPATH_TELEFONE, '8100000001');
 
     await selectDropdown(driver, XPATH_ESTADO, 'Pernambuco');
     await driver.sleep(5000);
