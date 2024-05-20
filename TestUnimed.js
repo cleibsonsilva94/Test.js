@@ -67,7 +67,7 @@ async function example() {
     // Verificação final por meio do IF 
     if (elementoMensagemSucesso) {
       const textoMensagemSucesso = await elementoMensagemSucesso.getText();
-      const mensagemEsperada = 'Sua solicitação foi enviada com  e uma cópia será encaminhada para o seu e-mail!';
+      const mensagemEsperada = 'Sua solicitação foi enviada com sucesso e uma cópia será encaminhada para o seu e-mail!';
 
       if (textoMensagemSucesso === mensagemEsperada) {
         console.log('A mensagem de sucesso esperada foi encontrada na página:', textoMensagemSucesso);
