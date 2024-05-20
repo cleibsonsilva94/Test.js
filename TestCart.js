@@ -1,4 +1,4 @@
-const { Builder, By, until } = require('selenium-webdriver'); // ICARO DA SILVA
+const { Builder, By, until } = require('selenium-webdriver'); // Cleibson Silva
 
 // Função auxiliar para clicar em um elemento e aguardar um curto período
 async function clickElement(driver, xpath, sleepTime = 2000) {
