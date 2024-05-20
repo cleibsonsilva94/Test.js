@@ -50,7 +50,7 @@ async function example() {
     await fillFormField(driver, XPATH_CPF, '012.361.971-86');
     await fillFormField(driver, XPATH_NOME, 'Testador da Silva Teste');
     await fillFormField(driver, XPATH_EMAIL, 'testadordasilvateste@gmail.com');
-    await fillFormField(driver, XPATH_TELEFONE, '8100000001');
+    await fillFormField(driver, XPATH_TELEFONE, '(81) 91872-4307');
 
     await selectDropdown(driver, XPATH_ESTADO, 'Pernambuco');
     await driver.sleep(5000);
