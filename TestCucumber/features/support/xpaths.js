@@ -1,5 +1,5 @@
 module.exports = {
-    URL: 'https://www.unimed.coop.br/site',  
+    URL: 'https://www.unimed.coop.br/site',  //Atualizaçao
     XPATH_ACEITAR_TODOS: '//div[@class="cf1lHZ cf2MAH cf3l36"]//*[@aria-label="Aceitar todos"]',
     XPATH_SERVICOS: '//p[contains(@class, "menuAcessoRapid") and contains(text(), "Serviços")]',
     XPATH_PLANOS: '//a[contains(@class, "menuAcessoRapido") and contains(text(), "Planos")]', 
