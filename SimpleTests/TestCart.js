@@ -17,7 +17,7 @@ async function sendKeysToElement(driver, id, text, sleepTime = 2000) {
 
 // Função principal
 async function example() {
-  let driver = await new Builder().forBrowser('chrome').build();
+   
 
   // Definição dos XPaths usados
   const URL = 'https://www.ferreiracosta.com';
