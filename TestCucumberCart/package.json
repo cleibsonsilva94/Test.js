@@ -1,0 +1,15 @@
+{
+  "name": "projeto-cucumber",
+  "version": "1.0.0",
+  "description": "Projeto de teste usando Cucumber e Selenium WebDriver",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^7.0.0",
+    "selenium-webdriver": "^4.0.0"
+  }
+}
