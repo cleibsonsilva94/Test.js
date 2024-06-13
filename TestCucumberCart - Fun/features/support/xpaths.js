@@ -10,6 +10,6 @@ module.exports = {
     XPATH_PRODUCT_PRICE_IN_CART: "//h3[@class='styles__TextPrice-sc-432ccc7e-11 gDOEip']",
     XPATH_LOGO: '//div[@id="logo-wapper"]',
     XPATH_MENU_ITEM: "//*[contains(@class, 'styles__BaseHyperLink-sc-7fed0')]",
-    XPATH_CART_BUTTON: "//div[@data-cy='button-cart-modal-cart']"
+    XPATH_CART_BUTTON: "(//div[@class='Container-sc-b91fe638-0 XjjIe']//*[@aria-label='Carrinho'])[1]"
   };
   

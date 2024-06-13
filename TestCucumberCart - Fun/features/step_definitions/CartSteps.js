@@ -48,10 +48,8 @@ When('eu clico no logo para retornar à página inicial', async function () {
 });
 
 When('eu vou para o carrinho novamente', async function () {
-  console.log('Esperando o botão do carrinho ser localizado...');
   const cartButtonElement = await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_CART_BUTTON)), timeout);
   await driver.wait(until.elementIsVisible(cartButtonElement), timeout);
-  console.log('Botão do carrinho localizado. Tentando clicar...');
   await cartButtonElement.click();
 });
 
