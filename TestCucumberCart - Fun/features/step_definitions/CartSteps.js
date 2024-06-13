@@ -51,6 +51,9 @@ When('eu vou para o carrinho novamente', async function () {
   const cartButtonElement = await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_CART_BUTTON)), timeout);
   await driver.wait(until.elementIsVisible(cartButtonElement), timeout);
   await cartButtonElement.click();
+  const cartButton = await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_CART)), timeout);
+  await driver.wait(until.elementIsVisible(cartButton), timeout);
+  await cartButton.click();
 });
 
 Then('eu devo ver o produto no carrinho com o nome {string}', async function (nomeProdutoEsperado) {
