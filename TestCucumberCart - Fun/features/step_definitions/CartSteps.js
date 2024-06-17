@@ -70,9 +70,10 @@ Then('o preço do produto no carrinho deve ser {string}', async function (valorP
   await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_PRODUCT_PRICE_IN_CART)), timeout);
   const valorProdutoElement = await driver.findElement(By.xpath(xpaths.XPATH_PRODUCT_PRICE_IN_CART));
   const valorProdutoNaPagText = await valorProdutoElement.getText();
-  const valorProdutoNaPag = parseFloat(valorProdutoNaPagText.replace(/[^\d.,]/g, '').replace(',', '.'));
-  
+  const formattedValue = valorProdutoNaPagText.replace(/[^\d.,]/g, '');
+  const valorProdutoNaPag = parseFloat(formattedValue.replace(',', '.'));
+
   if (valorProdutoNaPag !== parseFloat(valorProdutoEsperado)) {
-    throw new Error(`Preço esperado no carrinho: ${valorProdutoEsperado}, Preço encontrado: ${valorProdutoNaPag}`);
+      throw new Error(`Preço esperado no carrinho: ${valorProdutoEsperado}, Preço encontrado: ${valorProdutoNaPag}`);
   }
 });
