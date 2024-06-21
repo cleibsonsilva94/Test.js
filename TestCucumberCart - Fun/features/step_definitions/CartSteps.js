@@ -1,6 +1,5 @@
 const { Given, When, Then, After, Before } = require('@cucumber/cucumber');
 const { Builder, By, until } = require('selenium-webdriver');
-const assert = require('assert');
 const xpaths = require('../support/xpaths');
 
 let driver;
