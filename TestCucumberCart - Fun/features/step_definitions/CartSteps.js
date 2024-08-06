@@ -3,7 +3,7 @@ const { Builder, By, until } = require('selenium-webdriver');
 const xpaths = require('../support/xpaths');
 
 let driver;
-const timeout = 15000; git
+const timeout = 15000;
 
 Before(async function () {
   driver = await new Builder().forBrowser('chrome').build();
