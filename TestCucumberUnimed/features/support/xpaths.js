@@ -15,3 +15,7 @@ module.exports = {
     XPATH_CONFIRMAR: "(//button[@type='button'])[3]",
     XPATH_MENSAGEM_SUCESSO: "//div//*[contains(text(), 'Sua solicitação foi enviada com sucesso e uma cópia será encaminhada para o seu e-mail!')]"
 };
+
+/* 
+ npx cucumber-js 
+*/
