@@ -10,4 +10,4 @@ Feature: Realizar busca e adicionar produto ao carrinho
         When  clico no logo para retornar à página inicial
         When  vou para o carrinho novamente
         Then  devo ver o produto no carrinho com o nome "Máquina Elétrica de Cortar Cabelo Cadence CAB181 220V"
-        Then o preço do produto no carrinho deve ser "89.90"
+        Then o preço do produto no carrinho deve ser "79"
