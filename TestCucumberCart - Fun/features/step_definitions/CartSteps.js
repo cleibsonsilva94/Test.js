@@ -3,7 +3,7 @@ const { Builder, By, until } = require('selenium-webdriver');
 const xpaths = require('../support/xpaths');
 //Comando para testar: npx cucumber-js
 let driver;
-const timeout = 15000;
+const timeout = 5000;
 
 Before(async function () {
   driver = await new Builder().forBrowser('chrome').build();
