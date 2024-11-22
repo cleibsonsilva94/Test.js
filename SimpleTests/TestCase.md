@@ -1,3 +1,6 @@
+Regra de negócio: Eu sendo um banco, e permitindo que o usuário do banco realize apenas transferências das 8 às 20hs, com um valor máximo de 2mil reais para destinatários não cadastrados e de 5mil reais para destinatários cadastrados.
+
+
 ## Testando permissões e limites do sistema.
 
 ### Casos de Teste - O que o cliente pode fazer:
