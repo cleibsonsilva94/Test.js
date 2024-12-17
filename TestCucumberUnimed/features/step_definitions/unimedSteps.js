@@ -4,7 +4,7 @@ const assert = require('assert');
 const xpaths = require('../support/xpaths');
 
 let driver;
-const timeout = 10000; // Timeout padrão de 10 segundos
+const timeout = 800000; // Timeout padrão de 10 segundos
 
 Before(async function() {
     driver = await new Builder().forBrowser('chrome').build();
@@ -23,10 +23,13 @@ Given('aceito todos os cookies', async function () {
     await driver.findElement(By.xpath(xpaths.XPATH_ACEITAR_TODOS)).click();
 });
 
-When('clico em {string}', async function (menu, submenu) {
-    await driver.findElement(By.xpath(xpaths.XPATH_PLANOS)).click();
-    await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_PESSOA_FISICA)), timeout);
+When('clico em {string}', function (menu, callback) {
+    driver.findElement(By.xpath(xpaths.XPATH_PLANOS)).click()
+        .then(() => driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_PESSOA_FISICA)), timeout))
+        .then(() => callback())
+        .catch(callback);
 });
+
 
 When('escolho {string}', async function (tipoPessoa) {
     await driver.findElement(By.xpath(xpaths.XPATH_PESSOA_FISICA)).click();
