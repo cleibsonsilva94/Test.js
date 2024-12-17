@@ -4,6 +4,7 @@ const assert = require('assert');
 const xpaths = require('../support/xpaths');
 
 let driver;
+const timeout = 10000; // Timeout padrão de 10 segundos
 
 Before(async function() {
     driver = await new Builder().forBrowser('chrome').build();
@@ -15,7 +16,7 @@ After(async function() {
 
 Given('que estou no site da Unimed', { timeout: 60000 }, async function () {
     await driver.get(xpaths.URL);
-    await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_ACEITAR_TODOS)), 30000);
+    await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_ACEITAR_TODOS)), timeout);
 });
 
 Given('aceito todos os cookies', async function () {
@@ -24,12 +25,12 @@ Given('aceito todos os cookies', async function () {
 
 When('clico em {string}', async function (menu, submenu) {
     await driver.findElement(By.xpath(xpaths.XPATH_PLANOS)).click();
-    await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_PESSOA_FISICA)), 30000);
+    await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_PESSOA_FISICA)), timeout);
 });
 
 When('escolho {string}', async function (tipoPessoa) {
     await driver.findElement(By.xpath(xpaths.XPATH_PESSOA_FISICA)).click();
-    await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_CPF)), 30000);
+    await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_CPF)), timeout);
 });
 
 When('preencho o formulário com:', async function (dataTable) {
@@ -43,15 +44,15 @@ When('preencho o formulário com:', async function (dataTable) {
 });
 
 When('indico que não possuo plano atualmente', async function () {
-    await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_NAO)), 30000);
+    await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_NAO)), timeout);
     await driver.findElement(By.xpath(xpaths.XPATH_NAO)).click();
 });
 
 When('submeto a solicitação do plano', async function () {
     await driver.findElement(By.xpath(xpaths.XPATH_SOLICITAR_PLANO)).click();
-    await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_CONFIRMAR)), 30000);
+    await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_CONFIRMAR)), timeout);
     await driver.findElement(By.xpath(xpaths.XPATH_CONFIRMAR)).click();
-    await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_MENSAGEM_SUCESSO)), 30000);
+    await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_MENSAGEM_SUCESSO)), timeout);
 });
 
 Then('devo ver uma mensagem de sucesso {string}', async function (mensagemEsperada) {
@@ -74,6 +75,6 @@ async function fillFormField(driver, xpath, value) {
 
 async function selectDropdown(driver, arrowXpath, itemText) {
     await driver.findElement(By.xpath(arrowXpath)).click();
-    await driver.wait(until.elementLocated(By.xpath(`//div[contains(text(),'${itemText}')]`)), 30000);
+    await driver.wait(until.elementLocated(By.xpath(`//div[contains(text(),'${itemText}')]`)), timeout);
     await driver.findElement(By.xpath(`//div[contains(text(),'${itemText}')]`)).click();
 }
