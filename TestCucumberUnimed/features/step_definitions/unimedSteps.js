@@ -22,9 +22,7 @@ Given('aceito todos os cookies', async function () {
     await driver.findElement(By.xpath(xpaths.XPATH_ACEITAR_TODOS)).click();
 });
 
-When('navego para {string} e seleciono {string}', async function (menu, submenu) {
-    let elemento = await driver.findElement(By.xpath(xpaths.XPATH_SERVICOS));
-    await driver.executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center' });", elemento);
+When('clico em {string}', async function (menu, submenu) {
     await driver.findElement(By.xpath(xpaths.XPATH_PLANOS)).click();
     await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_PESSOA_FISICA)), 30000);
 });

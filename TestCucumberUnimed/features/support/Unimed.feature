@@ -6,7 +6,7 @@ Feature: Solicitação de simulação de um plano ideal
   Scenario: Solicitação de plano bem-sucedida com dados válidos
     Given que estou no site da Unimed
     Given aceito todos os cookies
-    When navego para "Serviços" e seleciono "Planos"
+    When clico em "Planos"
     When escolho "Pessoa Física"
     When preencho o formulário com:
       | cpf      | 012.361.971-86                 |

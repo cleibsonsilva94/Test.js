@@ -1,8 +1,7 @@
 module.exports = {
     URL: 'https://www.unimed.coop.br/site',
-    XPATH_ACEITAR_TODOS: '//div[@class="cf1lHZ cf2MAH cf3l36"]//*[@aria-label="Aceitar todos cookie"]',
-    XPATH_SERVICOS: '//p[contains(@class, "menuAcessoRapid") and contains(text(), "Serviços")]',
-    XPATH_PLANOS: '//a[contains(@class, "menuAcessoRapido") and contains(text(), "Planos")]', 
+    XPATH_ACEITAR_TODOS: '//div[@class="cf1lHZ cf2L3T"]//button[@title="Aceitar todos cookie"]',
+    XPATH_PLANOS: '(//div[contains(@class, "menu")]//span[@class="text-nowrap"])[1]', 
     XPATH_PESSOA_FISICA: "//button[contains(@class, 'm-2 m-s') and contains(text(), 'PESSOA FÍSICA')]",
     XPATH_CPF: "(//input[@name='cpf'])[1]",
     XPATH_NOME: "(//input[@name='nome'])[1]",  
