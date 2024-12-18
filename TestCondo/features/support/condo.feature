@@ -4,7 +4,6 @@ Feature: Teste de formulario
   
   Scenario: Solicitação feita por meio de formulario
     Given que estou no site da Condo
-    When me direciono até "Receba nossa newsletter no seu e-mail"
     When e clico em "Seu nome"
     When preencho o formulário com:
       | nome     | Testador Sikva                 |
