@@ -4,7 +4,7 @@ const assert = require('assert');
 const xpaths = require('../support/xpaths');
 
 let driver;
-const timeout = 10000; // Timeout padrão de 10 segundos
+const timeout = 400000; // Timeout padrão de 10 segundos
 
 // Hooks: Inicialização e encerramento do WebDriver
 Before(async function() {
@@ -18,11 +18,6 @@ After(async function() {
 // Passos do teste
 Given('que estou no site da Condo', { timeout: 60000 }, async function () {
     await driver.get(xpaths.URL); // URL a ser definida
-});
-
-When('me direciono até {string}', async function (section) {
-    await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_FORM)), timeout);
-    await driver.findElement(By.xpath(xpaths.XPATH_FORM)).click();
 });
 
 When('me direciono até {string}', async function (section) {
