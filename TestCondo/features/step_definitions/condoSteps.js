@@ -35,33 +35,40 @@ When('e clico em {string}', async function (campo) {
     await driver.executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center' });", elemento);
     await elemento.click();
 
-    console.log(`Elemento "${campo}" foi clicado com sucesso.`);
 });
 
 When('preencho o formulário com:', async function (dataTable) {
     const data = dataTable.rowsHash();
-
-    // Preenche os campos do formulário com os valores fornecidos
     await fillFormField(driver, xpaths.XPATH_NOME, data.nome);
     await fillFormField(driver, xpaths.XPATH_EMAIL, data.email);
 });
 
 When('clico em {string}', async function (botao) {
-    if (botao === "Assine agota") {
-        await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_BOTAO_ASSINAR)), timeout);
-        await driver.findElement(By.xpath(xpaths.XPATH_BOTAO_ASSINAR)).click();
-    }
+    await driver.findElement(By.xpath(xpaths.XPATH_BOTAO_ASSINAR)).click();
+    await driver.sleep(8000);
 });
 
 Then('devo ver uma mensagem de sucesso {string}', async function (mensagemEsperada) {
-    const elementoMensagemSucesso = await driver.findElement(By.xpath(xpaths.XPATH_MENSAGEM_SUCESSO));
+    // Aguarda até que o elemento da mensagem esteja visível
+    const elementoMensagemSucesso = await driver.wait(
+        until.elementLocated(By.xpath(xpaths.XPATH_MENSAGEM_SUCESSO)),
+        timeout,
+        'Mensagem de sucesso não apareceu dentro do tempo limite.'
+    );
+
+    // Adiciona uma espera extra explícita para garantir renderização completa
+    await driver.wait(until.elementIsVisible(elementoMensagemSucesso), timeout);
+
+    // Obtém o texto da mensagem de sucesso
     const textoMensagemSucesso = await elementoMensagemSucesso.getText();
 
+    // Validação do texto da mensagem
     assert.strictEqual(
         textoMensagemSucesso,
         mensagemEsperada,
-        'A mensagem de sucesso não corresponde ao esperado!'
+        'A mensagem de sucesso não corresponde à esperada.'
     );
+
     console.log('Mensagem de sucesso validada:', textoMensagemSucesso);
 });
 
