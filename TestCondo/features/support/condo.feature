@@ -1,12 +1,12 @@
-Feature: Teste de formulario
+Feature: Teste de formulário
   Como um usuário
-  solicito receber newsletter 
-  
-  Scenario: Solicitação feita por meio de formulario
+  Solicito receber newsletter 
+
+  Scenario: Solicitação feita por meio de formulário
     Given que estou no site da Condo
-    When e clico em "Seu nome"
-    When preencho o formulário com:
-      | nome     | Testador Sikva                 |
-      | email    | testadordasilvateste123@gmail.com |
-    When clico em "Assine agora"
+    When eu clico em "Seu nome"
+    And preencho o formulário com:
+      | nome  | Testador Silva                    |
+      | email | testadordasilvateste123@gmail.com |
+    And clico em "Assine agora"
     Then devo ver uma mensagem de sucesso "Your submission was successful."

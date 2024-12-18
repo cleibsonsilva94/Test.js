@@ -4,9 +4,8 @@ const assert = require('assert');
 const xpaths = require('../support/xpaths');
 
 let driver;
-const timeout = 500000; // Timeout padrão de 10 segundos
+const timeout = 500000; 
 
-// Hooks: Inicialização e encerramento do WebDriver
 Before(async function () {
     driver = await new Builder().forBrowser('chrome').build();
 });
@@ -15,14 +14,12 @@ After(async function () {
     await driver.quit();
 });
 
-// Passos do teste
 Given('que estou no site da Condo', { timeout: 900000 }, async function () {
-    await driver.get(xpaths.URL); // URL a ser definida
+    await driver.get(xpaths.URL);
 });
 
-When('e clico em {string}', async function (campo) {
+When('eu clico em {string}', async function (campo) {
     let xpath;
-
     switch (campo) {
         case "Seu nome":
             xpath = xpaths.XPATH_NOME;
@@ -30,17 +27,13 @@ When('e clico em {string}', async function (campo) {
         default:
             throw new Error(`Campo desconhecido: ${campo}`);
     }
-
     const elemento = await driver.wait(until.elementLocated(By.xpath(xpath)), timeout);
     await driver.executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center' });", elemento);
     await elemento.click();
-
 });
 
 When('preencho o formulário com:', async function (dataTable) {
     const data = dataTable.rowsHash();
-
-    // Preenche os campos do formulário
     await fillFormField(driver, xpaths.XPATH_NOME, data.nome);
     await fillFormField(driver, xpaths.XPATH_EMAIL, data.email);
 });
