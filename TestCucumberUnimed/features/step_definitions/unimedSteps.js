@@ -38,11 +38,11 @@ When('escolho {string}', async function (tipoPessoa) {
 
 When('preencho o formulário com:', async function (dataTable) {
     const data = dataTable.rowsHash();
+    await selectDropdown(driver, xpaths.XPATH_ESTADO, data.estado);
     await fillFormField(driver, xpaths.XPATH_CPF, data.cpf);
     await fillFormField(driver, xpaths.XPATH_NOME, data.nome);
     await fillFormField(driver, xpaths.XPATH_EMAIL, data.email);
     await fillFormField(driver, xpaths.XPATH_TELEFONE, data.telefone);
-    await selectDropdown(driver, xpaths.XPATH_ESTADO, data.estado);
     await selectDropdown(driver, xpaths.XPATH_CIDADE, data.cidade);
 });
 

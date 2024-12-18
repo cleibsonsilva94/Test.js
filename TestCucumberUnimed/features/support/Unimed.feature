@@ -9,11 +9,11 @@ Feature: Solicitação de simulação de um plano ideal
     When clico em "Planos"
     When escolho "Pessoa Física"
     When preencho o formulário com:
+      | estado   | Pernambuco                     |
       | cpf      | 012.361.971-86                 |
       | nome     | Testador Sikva                 |
       | email    | testadordasilvateste@gmail.com |
       | telefone | 81 91872-4307                  |
-      | estado   | Pernambuco                     |
       | cidade   | Abreu e Lima                   |
     When indico que não possuo plano atualmente
     When submeto a solicitação do plano
