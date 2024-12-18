@@ -1,16 +1,20 @@
-// xpaths.js
 module.exports = {
-    URL: 'https://condoconta.com.br/',
-    XPATH_CLOSE_COOKIE_POPUP: "//button[@data-cy='button-close-modal-cookie']",
-    XPATH_SEARCH_BUTTON: "//span[contains(@class, 'SearchProdu')]",
-    XPATH_PRODUCT_IMAGE: "//img[contains(@alt, 'Máquina Elétrica de Cortar Cabelo Cadence CAB181 220V')]",
-    XPATH_ADD_TO_CART_BUTTON: "//div[@data-cy='box-product-box-buttons']",
-    XPATH_PROCEED_TO_CART_BUTTON: "//button[@class='styles__ButtonSuccess-sc-78d4639c-4 cJdVyu']",
-    XPATH_PRODUCT_NAME_IN_CART: "//h3[@class='styles__TitleProduct-sc-8ac0a507-5 gkyEfO']",
-    XPATH_PRODUCT_PRICE_IN_CART: "//h3[@class='styles__TextPrice-sc-8ac0a507-11 dZjvJE']",
-    XPATH_LOGO: '//div[@id="logo-wapper"]',
-    XPATH_MENU_ITEM: "//*[contains(@class, 'styles__BaseHyperLink-sc-7fed0')]",
-    XPATH_CART_BUTTON: "//span[@data-cy='cart-hyper-link']",
-    XPATH_CART: "//div[contains(@class, 'ButtonCart-sc')]"
-  };
-  
+    URL: 'https://www.unimed.coop.br/site',
+    XPATH_ACEITAR_TODOS: '//div[@class="cf1lHZ cf2L3T"]//button[@title="Aceitar todos cookie"]',
+    XPATH_PLANOS: '(//a[@href="https://www.unimed.coop.br/site/planos"])[2]', 
+    XPATH_PESSOA_FISICA: "//button[contains(@class, 'm-2 m-s') and contains(text(), 'PESSOA FÍSICA')]",
+    XPATH_CPF: "(//input[@name='cpf'])[1]",
+    XPATH_NOME: "(//input[@name='nome'])[1]",  
+    XPATH_EMAIL: "(//input[@name='email'])",
+    XPATH_TELEFONE: "(//input[@name='telefone'])",
+    XPATH_ESTADO:  "(//span[@class='Select-arrow-zone'])[1]",
+    XPATH_CIDADE: "(//span[@class='Select-arrow-zone'])[2]",
+    XPATH_NAO: "//div[@class='col-12 col-sm-6 text-center']//*[contains(text(),'Não')]",
+    XPATH_SOLICITAR_PLANO: "//a[@id='solicita_plano_pf']",
+    XPATH_CONFIRMAR: "(//button[@type='button'])[3]",
+    XPATH_MENSAGEM_SUCESSO: "//div//*[contains(text(), 'Sua solicitação foi enviada com sucesso e uma cópia será encaminhada para o seu e-mail!')]"
+};
+
+/* 
+ npx cucumber-js 
+*/
