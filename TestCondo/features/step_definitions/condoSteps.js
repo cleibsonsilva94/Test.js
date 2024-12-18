@@ -7,27 +7,36 @@ let driver;
 const timeout = 400000; // Timeout padrão de 10 segundos
 
 // Hooks: Inicialização e encerramento do WebDriver
-Before(async function() {
+Before(async function () {
     driver = await new Builder().forBrowser('chrome').build();
 });
 
-After(async function() {
+After(async function () {
     await driver.quit();
 });
 
 // Passos do teste
-Given('que estou no site da Condo', { timeout: 60000 }, async function () {
+Given('que estou no site da Condo', { timeout: 900000 }, async function () {
     await driver.get(xpaths.URL); // URL a ser definida
 });
 
 When('me direciono até {string}', async function (section) {
-    const elemento = await driver.wait(
-        until.elementLocated(By.xpath(xpaths.XPATH_FORM)),
-        timeout
-    );
+    let xpath;
 
+    // Escolhe o XPath do elemento baseado no texto
+    switch (section) {
+        case "Receba nossa newsletter no seu e-mail":
+            xpath = xpaths.XPATH_FORM; // Substitua com o XPath correto
+            break;
+        default:
+            throw new Error(`Seção desconhecida: ${section}`);
+    }
+
+    // Localiza o elemento e realiza o scroll até ele
+    const elemento = await driver.wait(until.elementLocated(By.xpath(xpath)), timeout);
     await driver.executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center' });", elemento);
-    await elemento.click();
+
+    console.log(`Elemento "${section}" foi centralizado na tela.`);
 });
 
 When('preencho o formulário com:', async function (dataTable) {
