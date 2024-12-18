@@ -1,10 +1,10 @@
 module.exports = {
-    URL: 'https://www.seusite.com',
+    URL: 'https://condoconta.com.br/',
     XPATH_FORM: '//div[@id="newsletter-section"]',
-    XPATH_NOME: '//input[@id="name"]',
-    XPATH_EMAIL: '//input[@id="email"]',
-    XPATH_BOTAO_ASSINAR: '//button[contains(text(),"Assine agota")]',
-    XPATH_MENSAGEM_SUCESSO: '//div[@class="success-message"]',
+    XPATH_NOME: '//input[@id="form-field-field_ba499a4"]',
+    XPATH_EMAIL: '//input[@type="email"]',
+    XPATH_BOTAO_ASSINAR: '//span[contains(text(),"Assine agora")]',
+    XPATH_MENSAGEM_SUCESSO: '//div[@class="elementor-message elementor-message-success"]',
 };
 
 

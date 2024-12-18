@@ -9,5 +9,5 @@ Feature: Teste de formulario
     When preencho o formulário com:
       | nome     | Testador Sikva                 |
       | email    | testadordasilvateste@gmail.com |
-    When clico em "Assine agota"
+    When clico em "Assine agora"
     Then devo ver uma mensagem de sucesso "Sua solicitação foi enviada com sucesso e uma cópia será encaminhada para o seu e-mail!"

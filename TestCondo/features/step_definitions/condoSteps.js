@@ -25,11 +25,14 @@ When('me direciono até {string}', async function (section) {
     await driver.findElement(By.xpath(xpaths.XPATH_FORM)).click();
 });
 
-When('clico em {string}', async function (campo) {
-    if (campo === "Seu nome") {
-        await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_NOME)), timeout);
-        await driver.findElement(By.xpath(xpaths.XPATH_NOME)).click();
-    }
+When('me direciono até {string}', async function (section) {
+    const elemento = await driver.wait(
+        until.elementLocated(By.xpath(xpaths.XPATH_FORM)),
+        timeout
+    );
+
+    await driver.executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'center' });", elemento);
+    await elemento.click();
 });
 
 When('preencho o formulário com:', async function (dataTable) {
