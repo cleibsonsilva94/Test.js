@@ -8,6 +8,7 @@ const timeout = 500000;
 
 Before(async function () {
     driver = await new Builder().forBrowser('chrome').build();
+    await driver.manage().window().maximize();
 });
 
 After(async function () {
