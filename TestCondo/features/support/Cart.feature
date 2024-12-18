@@ -1,12 +1,10 @@
-Feature: Realizar busca e adicionar produto ao carrinho
-    Como cliente, quero buscar um produto para adicioná-lo ao carrinho.
+Feature: Teste de formulario
+    Como póssivel  cliente, preencho formulario para receber newsletter.
     
     Scenario: Buscar e adicionar produto ao carrinho com sucesso
-        Given que estou no site da Ferreira Costa
-        When  fecho o popup de cookies
-        When  realizo uma busca por "Máquina de cortar cabelo"
-        When  seleciono o produto na lista de resultados
-        When  adiciono o produto ao carrinho
+        Given que estou no site da CondoConta
+        When  me encaminho até o formulario
+        When  preencho 
         When  clico no logo para retornar à página inicial
         When  vou para o carrinho novamente
         Then  devo ver o produto no carrinho com o nome "Máquina Elétrica de Cortar Cabelo Cadence CAB181 220V"

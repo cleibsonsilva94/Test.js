@@ -1,6 +1,6 @@
 // xpaths.js
 module.exports = {
-    URL: 'https://www.ferreiracosta.com',
+    URL: 'https://condoconta.com.br/',
     XPATH_CLOSE_COOKIE_POPUP: "//button[@data-cy='button-close-modal-cookie']",
     XPATH_SEARCH_BUTTON: "//span[contains(@class, 'SearchProdu')]",
     XPATH_PRODUCT_IMAGE: "//img[contains(@alt, 'Máquina Elétrica de Cortar Cabelo Cadence CAB181 220V')]",
