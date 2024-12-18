@@ -4,7 +4,7 @@ const assert = require('assert');
 const xpaths = require('../support/xpaths');
 
 let driver;
-const timeout = 9000000; // Timeout padrão de 10 segundos
+const timeout = 500000; // Timeout padrão de 10 segundos
 
 // Hooks: Inicialização e encerramento do WebDriver
 Before(async function () {
@@ -54,23 +54,18 @@ async function fillFormField(driver, xpath, value) {
 
 When('clico em {string}', async function (botao) {
     await driver.findElement(By.xpath(xpaths.XPATH_BOTAO_ASSINAR)).click();
-    await driver.sleep(8000);
+    await driver.sleep(4000);
 });
 
 Then('devo ver uma mensagem de sucesso {string}', async function (mensagemEsperada) {
-    // Aguarda até que o elemento da mensagem esteja visível
     const elementoMensagemSucesso = await driver.wait(
         until.elementLocated(By.xpath(xpaths.XPATH_MENSAGEM_SUCESSO)),
         timeout,
         'Mensagem de sucesso não apareceu dentro do tempo limite.'
     );
 
-    await driver.wait(until.elementIsVisible(elementoMensagemSucesso), timeout);
-
-    // Obtém o texto da mensagem de sucesso
     const textoMensagemSucesso = await elementoMensagemSucesso.getText();
 
-    // Validação do texto da mensagem
     assert.strictEqual(
         textoMensagemSucesso,
         mensagemEsperada,
