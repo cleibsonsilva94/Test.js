@@ -6,7 +6,6 @@ module.exports = {
     XPATH_MENSAGEM_SUCESSO: '//div[@class="elementor-message elementor-message-success"]',
 };
 
-
 /* 
  npx cucumber-js 
 */
