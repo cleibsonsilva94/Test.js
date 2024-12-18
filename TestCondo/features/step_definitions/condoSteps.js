@@ -56,7 +56,6 @@ Then('devo ver uma mensagem de sucesso {string}', async function (mensagemEspera
         'Mensagem de sucesso não apareceu dentro do tempo limite.'
     );
 
-    // Adiciona uma espera extra explícita para garantir renderização completa
     await driver.wait(until.elementIsVisible(elementoMensagemSucesso), timeout);
 
     // Obtém o texto da mensagem de sucesso
@@ -71,11 +70,3 @@ Then('devo ver uma mensagem de sucesso {string}', async function (mensagemEspera
 
     console.log('Mensagem de sucesso validada:', textoMensagemSucesso);
 });
-
-// Funções auxiliares
-async function fillFormField(driver, xpath, value) {
-    const element = await driver.findElement(By.xpath(xpath));
-    await element.click();
-    await element.clear();
-    await element.sendKeys(value);
-}
