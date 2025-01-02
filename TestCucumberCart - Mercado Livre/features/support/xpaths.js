@@ -2,7 +2,7 @@
 module.exports = {
     URL: 'https://www.mercadolivre.com.br/',
     XPATH_CLOSE_COOKIE_POPUP: "//div[contains(@class, 't__actions')]//button[1]",
-    XPATH_SEARCH_BUTTON: "//form[@class='nav-search']",
+    XPATH_SEARCH_BUTTON: "//button[@type='submit']",
     XPATH_PRODUCT_IMAGE: "//ol[@class='ui-search-layout ui-search-layout--grid']//*[contains(text(), 'KEMEI PROFISSIONAL')]",
     XPATH_ADD_TO_CART_BUTTON: "(//div[contains(@class, 'container')]//*[contains(text(), 'Adicionar ao carrinho')])[1]",
     //XPATH_PROCEED_TO_CART_BUTTON: "//button[@class='styles__ButtonSuccess-sc-78d4639c-4 cJdVyu']",

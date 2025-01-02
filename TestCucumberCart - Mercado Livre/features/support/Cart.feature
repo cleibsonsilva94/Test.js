@@ -7,4 +7,4 @@ Feature: Realizar busca e adicionar produto ao carrinho
         And  realizo uma busca por "Máquina de cortar cabelo"
         And  seleciono o produto na lista de resultados
         And  adiciono o produto ao carrinho
-        Then o sistema deve me infomar "Olá! Para adicionar ao carrinho, acesse a sua conta"
+        Then o sistema deve infomar "Olá! Para adicionar ao carrinho, acesse a sua conta"

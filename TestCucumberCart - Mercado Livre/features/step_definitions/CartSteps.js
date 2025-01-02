@@ -23,8 +23,8 @@ When('fecho o popup de cookies', async function () {
 });
 
 When('realizo uma busca por {string}', async function (produto) {
-  await driver.wait(until.elementLocated(By.id('searchProduct')), timeout);
-  await driver.findElement(By.id('searchProduct')).sendKeys(produto);
+  await driver.wait(until.elementLocated(By.id('cb1-edit')), timeout);
+  await driver.findElement(By.id('cb1-edit')).sendKeys(produto);
   await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_SEARCH_BUTTON)), timeout);
   await driver.findElement(By.xpath(xpaths.XPATH_SEARCH_BUTTON)).click();
 });
@@ -55,7 +55,7 @@ When('vou para o carrinho novamente', async function () {
   await cartButton.click();
 });
 
-Then('devo ver o produto no carrinho com o nome {string}', async function (criarConta) {
+Then('o sistema deve infomar {string}', async function (criarConta) {
   await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_CONTA)), timeout);
   const produtoNoCarrinhoElement = await driver.findElement(By.xpath(xpaths.XPATH_CONTA));
   const produtoNoCarrinhoTexto = await produtoNoCarrinhoElement.getText();
