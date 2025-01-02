@@ -20,8 +20,8 @@ Especificamente do carrinho do e-commerce. Para tal, dividi os testes em dois ca
 Antes de realizar qualquer compra na plataforma de e-commerce, o usuário precisa adicionar os itens ao carrinho. Caso mude de ideia, ele também pode remover produtos que não deseja comprar mais. 
 Por isso, foram criados dois cenários:  
 
-- Adicionar produtos ao carrinho  
-- Excluir produtos do carrinho  
+1. Adicionar produtos ao carrinho  
+2. Excluir produtos do carrinho  
 
 #### **O QUE O USUÁRIO DEVE SER IMPEDIDO DE FAZER:**  
 O sistema possui algumas restrições relacionadas ao carrinho, que impedem o usuário de realizar certas ações. Testei pelo menos duas dessas restrições:  
