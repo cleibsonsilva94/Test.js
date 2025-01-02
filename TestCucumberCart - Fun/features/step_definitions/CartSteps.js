@@ -3,7 +3,7 @@ const { Builder, By, until } = require('selenium-webdriver');
 const xpaths = require('../support/xpaths');
 //Comando para testar: npx cucumber-js
 let driver;
-const timeout = 200000;
+const timeout = 300000;
 
 Before(async function () {
   driver = await new Builder().forBrowser('chrome').build();
@@ -65,7 +65,7 @@ Then('devo ver o produto no carrinho com o nome {string}', async function (nomeP
   }
 });
 
-Then('o preço do produto no carrinho deve ser {string}', async function (valorProdutoEsperado) {
+Then('o produto deve conter o seguinte preço {string}', async function (valorProdutoEsperado) {
   await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_PRODUCT_PRICE_IN_CART)), timeout);
   const valorProdutoElement = await driver.findElement(By.xpath(xpaths.XPATH_PRODUCT_PRICE_IN_CART));
   const valorProdutoNaPagText = await valorProdutoElement.getText();
