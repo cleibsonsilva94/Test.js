@@ -3,7 +3,7 @@ const { Builder, By, until } = require('selenium-webdriver');
 const xpaths = require('../support/xpaths');
 //Comando para testar: npx cucumber-js
 let driver;
-const timeout = 300000;
+const timeout = 15000;
 
 Before(async function () {
   driver = await new Builder().forBrowser('chrome').build();
@@ -37,8 +37,6 @@ When('seleciono o produto na lista de resultados', async function () {
 When('adiciono o produto ao carrinho', async function () {
   await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_ADD_TO_CART_BUTTON)), timeout);
   await driver.findElement(By.xpath(xpaths.XPATH_ADD_TO_CART_BUTTON)).click();
-  await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_PROCEED_TO_CART_BUTTON)), timeout);
-  await driver.findElement(By.xpath(xpaths.XPATH_PROCEED_TO_CART_BUTTON)).click();
 });
 
 When('clico no logo para retornar à página inicial', async function () {
@@ -56,17 +54,16 @@ When('vou para o carrinho novamente', async function () {
 });
 
 Then('o sistema deve infomar {string}', async function (criarConta) {
-  await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_CONTA)), timeout);
-  
-  const criarsuaconta = await driver.findElement(By.xpath(xpaths.XPATH_CONTA));
-  const criarContaOuLogar = (await criarsuaconta.getText()).trim();
-  
+  const contaElement = await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_CONTA)), timeout);
+  const criarContaOuLogar = (await contaElement.getText()).trim();
+
   if (!criarContaOuLogar.includes(criarConta)) {
     throw new Error(
       `A mensagem de alerta esperada não foi encontrada.\n` +
       `Esperado: "${criarConta}"\n` +
       `Encontrado: "${criarContaOuLogar}"`
     );
+
   }
 });
 
