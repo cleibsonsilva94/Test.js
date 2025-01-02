@@ -13,7 +13,7 @@ After(async function () {
   await driver.quit();
 });
 
-Given('que estou no site da Ferreira Costa', async function () {
+Given('que estou no site do Mercado Livre', async function () {
   await driver.get(xpaths.URL);
 });
 
@@ -55,13 +55,13 @@ When('vou para o carrinho novamente', async function () {
   await cartButton.click();
 });
 
-Then('devo ver o produto no carrinho com o nome {string}', async function (nomeProdutoEsperado) {
-  await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_PRODUCT_NAME_IN_CART)), timeout);
-  const produtoNoCarrinhoElement = await driver.findElement(By.xpath(xpaths.XPATH_PRODUCT_NAME_IN_CART));
+Then('devo ver o produto no carrinho com o nome {string}', async function (criarConta) {
+  await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_CONTA)), timeout);
+  const produtoNoCarrinhoElement = await driver.findElement(By.xpath(xpaths.XPATH_CONTA));
   const produtoNoCarrinhoTexto = await produtoNoCarrinhoElement.getText();
 
-  if (!produtoNoCarrinhoTexto.includes(nomeProdutoEsperado)) {
-    throw new Error(`Produto esperado no carrinho: ${nomeProdutoEsperado}, Produto encontrado: ${produtoNoCarrinhoTexto}`);
+  if (!produtoNoCarrinhoTexto.includes(criarConta)) {
+    throw new Error(`Produto esperado no carrinho: ${criarConta}, Produto encontrado: ${produtoNoCarrinhoTexto}`);
   }
 });
 
