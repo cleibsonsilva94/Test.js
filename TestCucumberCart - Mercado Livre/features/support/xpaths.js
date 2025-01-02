@@ -12,6 +12,6 @@ module.exports = {
    // XPATH_MENU_ITEM: "//*[contains(@class, 'styles__BaseHyperLink-sc-7fed0')]",
    // XPATH_CART_BUTTON: "//span[@data-cy='cart-hyper-link']",
     //XPATH_CART: "//div[contains(@class, 'ButtonCart-sc')]",
-    XPATH_CONTA: "//div[@class='center-card__header']/*[contains(text(), 'Olá! Para adicionar ao carrinho, acesse a sua conta')]"
+    XPATH_CONTA: "//div[@class='center-card__header']"
   };
   

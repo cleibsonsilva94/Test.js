@@ -57,11 +57,16 @@ When('vou para o carrinho novamente', async function () {
 
 Then('o sistema deve infomar {string}', async function (criarConta) {
   await driver.wait(until.elementLocated(By.xpath(xpaths.XPATH_CONTA)), timeout);
+  
   const criarsuaconta = await driver.findElement(By.xpath(xpaths.XPATH_CONTA));
-  const criarContaOuLogar = await criarsuaconta.getText();
-
+  const criarContaOuLogar = (await criarsuaconta.getText()).trim();
+  
   if (!criarContaOuLogar.includes(criarConta)) {
-    throw new Error(`A mensagem de alerta esperada: ${criarConta}, não foi encontrada`);
+    throw new Error(
+      `A mensagem de alerta esperada não foi encontrada.\n` +
+      `Esperado: "${criarConta}"\n` +
+      `Encontrado: "${criarContaOuLogar}"`
+    );
   }
 });
 
