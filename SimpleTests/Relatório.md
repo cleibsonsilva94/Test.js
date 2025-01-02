@@ -60,7 +60,7 @@ Prioridade: Alta
 - **Then** ao clicar em "Excluir", o produto some do carrinho, e deve ser exibida a mensagem: "Pronto! você excluiu o produto."  
 
 #### **MÉTRICAS:**  
-- Testaram cada um dos cenários 5 vezes em cada navegador. 
+- Fpi testado cada um dos cenários 5 vezes em cada navegador. 
 - Taxa de aprovação: 100%.  
 - Em todos os testes, o sistema se comportou como esperado.  
 
@@ -97,7 +97,7 @@ Prioridade: Alta
 - **Then** o sistema exibe um alerta: "Confira se o cupom está correto."
 
 #### **MÉTRICAS:**  
-- Testaram cada um dos cenários 5 vezes em cada navegador.  
+- Foi testado cada um dos cenários 5 vezes em cada navegador. 
 - Taxa de aprovação: 100%.  
 - Em todos os casos, o sistema se comportou corretamente, impedindo ações não permitidas.  
 
