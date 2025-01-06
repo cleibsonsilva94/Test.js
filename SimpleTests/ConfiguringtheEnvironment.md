@@ -53,4 +53,20 @@ https://github.com/cleibsonsilva94/Test.js/assets/156372072/4954b584-4253-4687-8
 
 E pronto, a magia acontece! A partir daí, você consegue criar automações diversas usando o Selenium WebDriver.
 
+## Instale o Cucumber com o seguinte comando:
+
+   ```bash
+   npm install @cucumber/cucumber --save-dev
+   ```
+---
+
+## Instalação do Node.js e Configuração de JavaScript
+
+1. Acesse o site oficial do Node.js: [https://nodejs.org/](https://nodejs.org/).
+2. Baixe e instale a versão LTS, seguindo as instruções específicas para o seu sistema operacional.
+3. Verifique se o Node.js foi instalado com sucesso executando o comando:
+
+   ```bash
+   node -v
+   ```
 Se tiver dúvidas em relação ao terminal, veja esse [repositório](https://github.com/cleibsonsilva94/DiaryOfAnApprentice01/blob/main/O%20que%20%C3%A9%20o%20terminal%3F.md).
