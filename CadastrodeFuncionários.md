@@ -24,7 +24,7 @@ O sistema impede a digitação do 11º dígito, travando no 10º.
 **Bug 02**
 
 **Descrição:**
-No campo telefone, o usuário não consegue inserir todos os 10 dígitos do número. Exemplo: ao tentar digitar "93187771", o sistema permite apenas 7 dígitos, resultando em "(93) 18777".
+No campo telefone, o usuário não consegue inserir todos os 10 dígitos do número. Exemplo: ao tentar digitar "(81) 9318-7771", o sistema permite apenas 7 dígitos, resultando em "(93) 18777".
 
 **Passos para reprodução:**
 1. Dentro da área logada, acessar o formulário de cadastro de funcionário.
@@ -47,13 +47,13 @@ No campo e-mail, não é possível inserir o endereço completo. Exemplo: ao ten
 
 **Passos para reprodução:**
 1. Dentro da área logada, acessar o campo de e-mail do funcionário.
-2. Tentar digitar "cleibsonslima@gmail.com".
+2. Tentar digitar "testador01@gmail.com".
 
 **Resultado esperado:**
 O sistema deve permitir a digitação de todos os caracteres do e-mail.
 
 **Resultado obtido:**
-O sistema impede a digitação após o 10º caractere.
+O sistema impede a digitação após o 9º caractere.
 
 **Severidade:** Média
 
