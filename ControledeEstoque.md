@@ -82,3 +82,5 @@ A digitação é instável, e só é possível inserir um valor com uma casa dec
 
 - **Campo "Descrição"**: Não é possível digitar mais de 4 caracteres, dificultando a descrição clara do produto.
 - **Problema de Responsividade**: O container da seção "Controle de Estoque" está visivelmente descentralizado na página.
+
+Existem muitos outros problemas no sistema que não estão descritos nestes textos. Alguns são sérios, outros nem tanto, mas todos precisariam ser corrigidos. Encontrei algumas inconsistências ao pesquisar os dados recentemente cadastrados, como a impossibilidade de editar um dado. Enfim, dentro do tempo que recebi, decidi priorizar os bugs que julguei como impactantes para as principais funcionalidades. 
