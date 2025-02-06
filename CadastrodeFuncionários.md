@@ -8,7 +8,7 @@
 No campo CPF, não é possível digitar todos os 11 dígitos necessários. O sistema permite apenas a inserção de 10 números, tornando impossível cadastrar um funcionário, visto que o CPF é um campo obrigatório.
 
 **Passos para reprodução:**
-1. Preencher corretamente o nome do novo funcionário.
+1. Dentro da área logada, acessar o formulário de cadastro de funcionário.
 2. Tentar digitar os 11 números do CPF.
 
 **Resultado esperado:**
