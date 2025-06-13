@@ -32,7 +32,7 @@ Organizar os testes realizados em diferentes plataformas e projetos, mantendo um
 
 ---
 
-## 🤝 Contribuições
+## 🤝 Contribuições e Sugestões
 
-Sinta-se à vontade para sugerir melhorias, apontar erros ou trocar ideias!  
-Toda sugestão é bem-vinda para tornar este repositório ainda mais útil. 
+Se quiser sugerir algo, corrigir ou compartilhar ideias, fique à vontade!  
+Esse repositório também é um espaço de aprendizado e troca de conhecimento.  
